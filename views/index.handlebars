@@ -1,0 +1,28 @@
+<img src="http://www.safefood.eu/SafeFood/media/SafeFoodLibrary/Images/Food%20Safety/sf_bf_sfwebsite_gif-2.gif" alt="burger">
+<h1 id="burgerheader">Eat-Da-Burger</h1>
+
+<div>
+    <h2>Not Devoured!</h2>
+    <ul>
+        {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+    </ul>
+
+</div>
+
+<div>
+    <h2>Devoured!</h2>
+    <ul>
+        {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+    </ul>
+</div>
+
+<form class="create-form">
+
+    <div class="form-group">
+        <textarea name="burger_name" id="bur" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+
+    <p> Enter a burger you want to eat then Click the "Submit" button.</p>
+
+</form>
